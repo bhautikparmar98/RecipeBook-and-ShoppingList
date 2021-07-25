@@ -1,0 +1,10 @@
+.padding-top{
+    padding-top: 190px;
+    transition: padding-top 0.5s
+}
+@media screen and (min-width: 767px) {
+  .padding-top{
+      padding-top: 0px;
+      transition: padding-top 0.5s
+  }
+}

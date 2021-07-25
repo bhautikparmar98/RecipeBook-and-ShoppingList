@@ -1,0 +1,13 @@
+<!-- <app-header (featureSelector)="OnNavigate($event)"></app-header> -->
+<app-header (event)="addPaddingtobody($event)"></app-header>
+<div class="component" [ngClass]="{'padding-top': addPadding }">
+  <div style="width:100%">
+    <div class="col-md-12">
+      <!-- <app-recipes *ngIf="loadedfeature==='Recipe'"></app-recipes> -->
+      <!-- <button class="btn btn-primary" style=" position:relative; left:5%">click here</button> -->
+      <!-- <app-shoplistedit  style=" position:relative; left:2%" *ngIf="loadedfeature!=='Recipe'"></app-shoplistedit> -->
+      <!-- <app-shoppinglist  style=" position:relative; left:2%" *ngIf="loadedfeature!=='Recipe'"></app-shoppinglist>  -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

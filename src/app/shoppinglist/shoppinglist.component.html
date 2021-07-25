@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-xs-10">
+        <!-- <app-shoplistedit (IngrediantAdded)="onIngrediantAdded($event)"></app-shoplistedit> -->
+        <app-shoplistedit ></app-shoplistedit>
+        <hr>
+        <!-- here async pipe will convert Observale to array
+        i.e it will autmatically subscribe and give value of that observable which is ingrediants -->
+        <ul class="list-group">
+            <a class="list-group-item" style="cursor:pointer" 
+            *ngFor = "let ingrediant of (ingrediants | async).ingrediants; let i = index"
+            (click)="onEditItem(i)">
+            {{ ingrediant.name }} ({{ ingrediant.amount }} )
+            </a>
+        </ul>
+    </div>
+</div>

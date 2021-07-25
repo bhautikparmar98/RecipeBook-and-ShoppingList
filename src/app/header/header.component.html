@@ -1,0 +1,30 @@
+<nav class="navbar navbar-default" style="height:10px;">
+    <button *ngIf="isAuthenticated" (click)="onClick()" type="button" class="navbar-toggle collapsed "
+        data-toggle="collapse" data-target="#navMenu" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <div class="navbar-header">
+        <a style="cursor:pointer" class="navbar-brand">Recipe Book</a>
+    </div>
+    <div class="collapse navbar-collapse blockHeight" id="navMenu">
+        <ul class="nav navbar-nav">
+            <li routerLinkActive="active"><a *ngIf="isAuthenticated" routerLink="/recipes">Recipie</a></li>
+            <li routerLinkActive="active"><a *ngIf="!isAuthenticated" routerLink="/auth">Authentication</a></li>
+            <li routerLinkActive="active"><a routerLink="/shoppinglist">Shopping List</a></li>
+        </ul>
+
+        <ul class="nav navbar navbar-right" *ngIf="isAuthenticated">
+            <li style="display:inline-block"><a style="cursor:pointer;" (click)=LogOut()>LogOut</a></li>
+            <li class="dropdown" appDropdown style="cursor:pointer ;display:inline-block">
+                <a style="cursor:pointer" class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a style="cursor:pointer" (click)="OnSavingData()">Saving Data</a></li>
+                    <li><a style="cursor:pointer" (click)="OnFetchingRecipes()">Fetching Data</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

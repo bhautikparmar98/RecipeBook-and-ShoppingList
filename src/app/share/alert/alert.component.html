@@ -1,0 +1,8 @@
+<div class="backdrop" (click)="onClose()"></div>
+<!-- this backdrop will ensure that focus on alert box and block access to rest of component -->
+<div class="alert-box">
+    <p>{{ message }}</p>
+    <div class="alert-box-actions">
+        <div class="btn btn-primary" (click)="onClose()">Close</div>
+    </div>
+</div>
